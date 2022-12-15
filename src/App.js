@@ -1,27 +1,34 @@
-import { observable, observe } from "@legendapp/state";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { observable } from "@legendapp/state";
+import { enableLegendStateReact, useComputed } from "@legendapp/state/react";
+import { Legend } from "@legendapp/state/react-components";
+import { useRef } from "react";
+import { LegendToggle } from "./LegendToggle";
+import RegularToggle from "./RegularToggle";
 
-const themeState = observable({ settings: { theme: "dark" } });
-themeState.settings.theme === "dark";
+enableLegendStateReact();
 
-observe(() => {
-  console.log(themeState.settings.theme.get());
-});
+const settings = observable({ enabled: false });
 
-const App = observer(function App() {
-  const theme = state.settings.theme.get();
-  const toggleTheme = () => {
-    state.settings.theme.set((theme) => {
-      theme === "dark" ? "light" : "dark";
-    });
-  };
+export default function App() {
+  const legendRenderCount = ++useRef(0).current;
+
+  // Computed text value
+  const text = useComputed(() => (settings.enabled.get() ? "Yes" : "No"));
+
   return (
-    <div>
-      <div>THeme :{theme}</div>
-      <button onClick={toggleTheme}>TOGGLE THEME </button>
+    <div className="mt-40 flex justify-center">
+      <div className=" inset-0 p-4">
+        <div className="text-gray-500 text-sm">
+          Legend Renders: {legendRenderCount}
+        </div>
+        <div className="text-green-400 text-sm">
+
+        </div>
+        <div className="pt-8 pb-4">Enabled: {text}</div>
+        <LegendToggle value={settings.enabled} />
+      </div>
+      <RegularToggle />
     </div>
   );
-});
-
-export default App;
+}
