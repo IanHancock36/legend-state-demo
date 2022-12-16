@@ -20,13 +20,17 @@ export default function ChristmasCardToggle6() {
   return (
     <div className="flex row justify-between">
       <div className="flex-1 p-4">
-        <div className="text-gray-500  text-lg pb-4">
-          Renders: {renderCount}
-        </div>
+        <div className=" text-white mb-10 font-mono text-[24px]">6TH DAY</div>
+        <div className="text-white text-xl pb-6">Renders: {renderCount}</div>
 
         <div>
           <button onClick={state6.showSidebar.toggle}>
-            <img src="./christmas-tree.jpg" height={100} width={100} />
+            <img
+              src="./christmas-tree.jpg"
+              height={100}
+              width={100}
+              className=" border rounded-md shadow-lg bg-transparent"
+            />
           </button>
         </div>
       </div>

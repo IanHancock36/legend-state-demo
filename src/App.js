@@ -21,11 +21,14 @@ export default function App() {
   const legendRenderCount = ++useRef(0).current;
 
   return (
-    <div className="mt-40 flex justify-center">
-   
-      {/* <ChristmasCountDown/> */}
-      {/* <div className=" inset-0 p-4"> */}
-      {/* <div className="text-gray-500 text-md">
+    <div className=" bg-[#0F8A5F] h-[100vh] mb-20">
+      <div className="text-[36px] text-white font-mono text-center p-20 ">
+        Last Week Of Christmas
+      </div>
+      <div className=" bg-[#0F8A5F] flex justify-center">
+        {/* <ChristmasCountDown/> */}
+        {/* <div className=" inset-0 p-4"> */}
+        {/* <div className="text-gray-500 text-md">
           Legend State Renders: {legendRenderCount}
           Legend Performance : {performance.now(legendRenderCount)}
         </div>
@@ -39,21 +42,22 @@ export default function App() {
         </div>
    
       </div> */}
-      <div className="flex row justify-between">
-        7
-        <ChristmasCardToggle1 />
-        6
-        <ChristmasCardToggle2 />
-        5
-        <ChristmasCardToggle3 />
-        4
-        <ChristmasCardToggle4 />
-        3
-        <ChristmasCardToggle5 />
-        2
-        <ChristmasCardToggle6 />
-        1
-        <ChristmasCardToggle7 />
+
+        <div className="flex row justify-between">
+          <ChristmasCardToggle1 />
+
+          <ChristmasCardToggle2 />
+
+          <ChristmasCardToggle3 />
+
+          <ChristmasCardToggle4 />
+
+          <ChristmasCardToggle5 />
+
+          <ChristmasCardToggle6 />
+
+          <ChristmasCardToggle7 />
+        </div>
       </div>
     </div>
   );
