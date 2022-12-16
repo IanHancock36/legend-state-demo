@@ -1,6 +1,5 @@
 import { useRef } from "react";
-import { reactive, useObservable } from "@legendapp/state/react";
-import { Legend } from "@legendapp/state/react-components";
+import { reactive } from "@legendapp/state/react";
 import { motion } from "framer-motion";
 import { observable } from "@legendapp/state";
 
