@@ -8,7 +8,9 @@ const RegularToggle=()=> {
   return (
     <div>
         <div>
-        RegularRenders: {regularRenders}
+
+        Regular Renders: {regularRenders}
+        Performance : {performance.now(regularRenders)}
         </div>
     <Switch
       checked={enabled}

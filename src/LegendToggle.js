@@ -12,7 +12,9 @@ export function LegendToggle({ value }) {
       })}
       style={{ width: 64, height: 32 }}
       onClick={value.toggle}
+      
     >
+  
       <MotionDiv$
         className="bg-white rounded-full shadow"
         style={{ width: 24, height: 24, marginTop: 3 }}
@@ -20,6 +22,7 @@ export function LegendToggle({ value }) {
           x: value.get() ? 32 : 6
         })}
       />
+     
     </MotionDiv$>
   )
 }
